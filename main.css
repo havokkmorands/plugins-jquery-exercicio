@@ -5,6 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: #f2f2f2;
     color: #333;
@@ -60,5 +64,6 @@ h2 {
 }
 
 .error {
-    color: red
+    color: rgb(235, 89, 89);
+    margin-top: 2px;
 }
