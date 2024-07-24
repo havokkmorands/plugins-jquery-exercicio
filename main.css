@@ -10,7 +10,7 @@ body {
     color: #333;
 }
 
-header {
+header , .container-rodape {
     background-color: #007bff;
     color: #fff;
     text-align: center;
