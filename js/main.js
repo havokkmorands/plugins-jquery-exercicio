@@ -1,42 +1,62 @@
-$('#telefone').mascara('(00) 00000-0000', {
-    placeholder: '(DDD) 12345-6789'
-})
+$(document).ready(() => {
+    $('#carousel-imagens').slick({
+        autoplay: true,
+        arrows: false
+    })
 
-$('#cpf').mascara('000.000.000-00', {
-    placeholder: '123.456.789-00'
-})
+    $('#telefone').mask('(00) 00000-0000', {
+        placeholder: '(DDD) 12345-6789'
+    })
 
-$('#cep').mascara('00000-000', {
-    placeholder: '012345-678'
-})
+    $('#cpf').mask('000.000.000-00', {
+        placeholder: '123.456.789-00'
+    })
 
-$('form').validate({
-    rules: {
-        nome: {
-            requerido: true
+    $('#cep').mask('00000-000', {
+        placeholder: '012345-678'
+    })
+
+    $('form').validate({
+        rules: {
+            nome: {
+                required: true,
+                minlength: 3
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            telefone: {
+                required: true,
+                minlength: 15
+            },
+            cpf: {
+                required: true,
+                minlength: 14
+            },
+            endereco: {
+                required: true,
+                minlength: 15
+            },
+            cep: {
+                required: true,
+                minlength: 9
+            }
         },
-        email: {
-            requerido: true,
-            email: true
+        messages: {
+            nome: "Por favor, insira o seu nome",
+            email: "Por favor, insira o seu e-mail",
+            telefone: "Por favor, insira o seu telefone",
+            cpf: "Por favor, insira o seu CPF",
+            endereco: "Por favor, insira o seu endereço",
+            cep: "Por favor, insira o seu CEP"
         },
-        telefone: {
-            requerido: true
+        submitHandler: function (form) {
+            alert("Sua requisição foi enviada para análise, parabéns pela aquisição!");
+            form.reset();
         },
-        endereco: {
-            requerido: true
-        },
-        cep: {
-            requerido: true
-        },
-        cpf: {
-            requerido: true
-        },
-    },
-    submitHandler: function (form) {
-        alert("Sua requisição foi enviada para análise, parabéns pela aquisição!");
-        form.reset();
-    },
-    invalidHandler: function (form, validator) {
-        alert("Por favor, preencha os campos para prosseguir com a compra!");
-    }
+        invalidHandler: function (form, validator) {
+            alert("Por favor, preencha os campos para prosseguir com a compra!");
+        }
+    })
 })
