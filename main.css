@@ -59,6 +59,24 @@ h2 {
     display: inline-block;
 }
 
+.mensagem {
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.mensagem-sucesso {
+    background-color: #28a745;
+    color: white;
+}
+
+.mensagem-erro {
+    background-color: #dc3545;
+    color: white;
+}
+
 .error {
-    color: red
+    color: red;
 }
